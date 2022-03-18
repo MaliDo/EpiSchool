@@ -1,9 +1,9 @@
 def is_prime(x):
-    if x > 1 and x % 2 != 0:
-        return True
-    elif x == 2:
-        return True
+    if x > 1:
+        for i in range(2, x):
+            if x % i == 0:
+                return False
+        else:
+            return True
     else:
         return False
-    
-print(is_prime(5))
