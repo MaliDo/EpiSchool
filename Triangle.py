@@ -24,6 +24,8 @@ class Triangle():
             if(s2+s3)>s1:
                 if(s1+s3)>s2:
                     return True
+                else:
+                    return False
             else:
                 return False
         else:
@@ -33,21 +35,23 @@ class Triangle():
         s1 = self.side1
         s2 = self.side2
         s3 = self.side3
-        if s1>s2 and s1>s3:
+        if s1>=s2 and s1>=s3:
             if s1**2==s2**2+s3**2:
                 return True
             else:
                 return False            
-        elif s2>s1 and s2>s3:
+        elif s2>=s1 and s2>=s3:
             if s2**2==s1**2+s3**2:
                 return True
             else:
                 return False
-        elif s3>s1 and s3>s2:
+        elif s3>=s1 and s3>=s2:
             if s3**2==s1**2+s2**2:
                 return True
             else:
                 return False
+        else:
+            False
 
 t = Triangle(4,13,15)
 
@@ -58,10 +62,10 @@ t_sc = t.scale(2)
 
 print(t_sc.perimeter())
 
-t_v = Triangle(1,3,5)
+t_v = Triangle(1,2,1)
 
 print(t_v.is_valid())
 
-t_r = Triangle(2,5,7)
+t_r = Triangle(1,1,1)
 
 print(t_r.is_right())
