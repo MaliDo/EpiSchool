@@ -1,21 +1,16 @@
 def is_prime(x):
-    if x > 1 and x % 2 != 0:
-        return True
-    elif x == 2:
-        return True
+    if x > 1:
+        for i in range(2, (int(x**0.5)+1)):
+            if x % i == 0:
+                return False
+        else:
+            return True
     else:
-        return False
+        return False 
     
-l1 = list(range(10000, 100000))
-l2 = []
-l3 = []
-
-for x in l1:
-    if is_prime(x) == True:
-        l2.append(x)
-
-for y in l2:
-    if list(str(y)) == list(reversed(str(y))):
-        l3.append(y)
-
-print(l3)
+l1 = []    
+for num in range(10000, 100000):
+    if (list(str(num)) == list(reversed(str(num)))):
+        if (is_prime(num) == True):
+            l1.append(num)
+print(l1)
