@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block container %}
+    <p>Count to {{ count_to }}</p>
+    <ul>
+        {% for n in l1 %}
+            {% if n%3==0 and n%5==0 %}
+            <li>FizzBuzz</li>
+            {% elif n%3==0 %}
+            <li>Fizz</li>
+            {% elif n%5==0 %}
+            <li>Buzz</li>
+            {% else %}
+            <li> {{ n }} </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
