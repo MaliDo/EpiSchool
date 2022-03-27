@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+
+{% block container %}
+<h1>{{ title }}</h1>
+<p>{{ text }}</p>
+{% if choices %}
+    <p>What do you choose?</p>
+    <div class="choices">
+    <ul>
+        {% for (page_name, choice) in choices %}
+        <li>
+            <a href="{{url_for(page_name)}}">{{choice}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </div>
+{% endif %}
+{% endblock %}
+
+{% block image %}
+    <img src="{{ url_for('static', filename='cruiseship.jpg') }}">
+{% endblock %}
