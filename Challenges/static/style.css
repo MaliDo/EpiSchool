@@ -1,0 +1,63 @@
+body {
+    background-color: lightblue;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 48px;
+    color: azure;
+    text-shadow: 0 0 4px black;
+}
+
+a {
+    color: azure;
+    text-shadow: 0 0 4px black;
+    font-weight: bold;
+}
+
+p {
+    font-size: 24pt;
+    color: azure;
+    text-shadow: 0 0 4px black;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: black;
+    font-size: 12pt;
+    color: azure;
+    text-shadow: 0 0 4px black;
+    font-weight: bold;
+}
+
+ul li::before {
+    content: "\2022";
+    color: navy;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+#footer {
+    position: bottom;
+    bottom: 0;
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+}
+
+.fizzbuzz {
+    text-align: left;
+}
+
+.words {
+    text-align: left;
+}

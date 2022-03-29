@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+{% block fizzbuzz %}
+<div class="container">
+    <h1>FizzBuzz Challenge:</h1>
+</div>
+<div class="container">
+<form action="{{ url_for(request.endpoint) }}" method="get">
+    <input type="text" placeholder="Count to" name="value">
+    <button>Count</button>
+</form>
+</div>
+{% endblock %}

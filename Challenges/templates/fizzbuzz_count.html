@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+
+{% block fizzbuzz_count %}
+<div class="container">
+    <h1>FizzBuzz Challenge:</h1>
+</div>
+<div class="container">
+    <div class="fizzbuzz">
+        <p>Count to {{ count_to }}:</p>
+        <ul>
+        {% for n in l1 %}
+            {% if n%3==0 and n%5==0 %}
+            <li>FizzBuzz</li>
+            {% elif n%3==0 %}
+            <li>Fizz</li>
+            {% elif n%5==0 %}
+            <li>Buzz</li>
+            {% else %}
+            <li> {{ n }} </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+        </div>
+</div>
+{% endblock %}

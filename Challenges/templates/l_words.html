@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+
+{% block l_words %}
+<div class="container">
+    <h1>Words Challenge:</h1>
+</div>
+<div class="container">
+    <div class="fizzbuzz">
+    <p>List of anagrams of {{ word }}:</p>
+    {% for item in word_list %}
+        {% if len(word) == len(item) %}
+            <ul>
+            {% if sorted(list(word.upper())) == sorted(list(item)) %}
+                <li>{{ item }}</li>
+            {% endif %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock %}
