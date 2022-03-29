@@ -28,4 +28,8 @@ def l_words(word):
     title = "Words - List"
     f = open('words.txt')
     word_list = f.read().splitlines()
-    return render_template("l_words.html", title=title, word_list=word_list, word=word, list=list, sorted=sorted, len=len, set=set)
+    l = []
+    for item in word_list:
+        if sorted(word.upper()) == sorted(item):
+            l.append(item)
+    return render_template("l_words.html", title=title, word_list=word_list, word=word, l=l)
