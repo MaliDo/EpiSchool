@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+{% block dict %}
+<div class="container">
+    <h1>Dictionary</h1>
+</div>
+<div class="container">
+    <div class="fizzbuzz">
+        <p>Choose a letter:</p>
+        {% for l in alph %}
+            <ul>
+                <li><a href="{{ url_for(request.endpoint) }}{{ l }}">{{ l }}</a></li>
+            </ul>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

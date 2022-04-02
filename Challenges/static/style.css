@@ -26,19 +26,18 @@ p {
 ul {
     list-style-type: black;
     font-size: 12pt;
-    color: azure;
-    text-shadow: 0 0 4px black;
+    text-shadow: 0 0 4px white;
     font-weight: bold;
 }
 
-ul li::before {
+/* ul li::before {
     content: "\2022";
     color: navy;
     font-weight: bold;
     display: inline-block;
     width: 1em;
     margin-left: -1em;
-  }
+  } */
 
 .container {
     text-align: center;

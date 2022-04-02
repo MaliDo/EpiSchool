@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+{% block dict %}
+<div class="container">
+    <h1>Dictionary</h1>
+</div>
+<div class="container">
+    <div class="fizzbuzz">
+        <p>{{ len(matching_words) }} words start with: {{ word }}</p>
+        {% if is_real_word %}
+            <h2>{{ word.title() }} is a real word!</h2>
+        {% else %}
+            <h2>{{ word.title() }} is not a word</h2>
+        {% endif %}
+        <h3>Go back one tier to:
+            {% if len(word)>1 %}
+                <a href="{{ url_for('dict') }}{{ word[:-1] }}">{{ word[:-1] }}</a>
+            {% else %}
+                <a href="{{ url_for('dict') }}{{ word[:-1] }}"> start</a>
+            {% endif %}
+        </h3>
+        {% for items in l %}
+            <ul>
+                    <li><a href="{{ url_for('dict') }}{{ items }}">{{ items }}</a></li>
+            </ul>
+        {% endfor %}
+    </div>
+    <h2><a href="{{ url_for('dict') }}">Start over</a></h2>
+</div>
+{% endblock %}
