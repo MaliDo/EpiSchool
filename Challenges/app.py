@@ -48,22 +48,14 @@ def dict_l(word):
     f = open('words.txt')
     word_list = f.read().splitlines()
     is_real_word = word.upper() in word_list
-    for i in alph:
-        l.append(word + i)
     matching_words = []
     for x in word_list:
         y = str(x[0:len(word)])
         if str(word.upper()) == y:
             matching_words.append(x)
-    # next_words = []
-    # real_next_words = []
-    # for z in l:
-    #     for i in alph:
-    #         next_words.append(z+i)
-    # for n in next_words:
-    #     for m in word_list:
-    #         if str(n.upper()) == str(m[0:len(n)]):
-    #             real_next_words.append(n)
+    for i in alph:
+        for p in matching_words:
+            if p.lower().startswith(word+i):
+                l.append(word + i)
+                break
     return render_template("dict_l.html", title=title, alph=alph, word=word, l=l, word_list=word_list, matching_words=matching_words, x=x, len=len, y=y, is_real_word=is_real_word, i=i)
-
-    # next_words=next_words, real_next_words=real_next_words
