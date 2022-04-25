@@ -26,7 +26,7 @@
             <tr>
               <td><a href="{{ url_for('products_by_category', category_id=category['Id']) }}">{{category['CategoryName']}}</a></td>
               <td>{{category['Description']}}</td>
-              <td>{{category['count(product.Id)']}}</td>
+              <td><a href="{{ url_for('products_by_category', category_id=category['Id']) }}">{{category['count(product.Id)']}}</a></td>
             </tr>
             {% endfor %}
         </tbody>
