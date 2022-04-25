@@ -19,3 +19,10 @@ def products(supplier_id):
 def categories():
     all_categories = database.get_categories()
     return render_template('categories.html', all_categories=all_categories)
+
+@app.route('/categories/<int:category_id>')
+def products_by_category(category_id):
+    products_by_cat = database.get_products_by_category(category_id)
+    the_category = database.get_the_category(category_id)
+    suppliers = database.get_all_suppliers()
+    return render_template('products_by_cat.html', products_by_cat=products_by_cat, the_category=the_category, suppliers=suppliers)

@@ -10,6 +10,9 @@
   <section class="section">
     <div class="container">
       <h1 class="title">
+        <a href="{{ url_for('categories') }}">Categories</a>
+        <br>
+        <br>
         {% for company in the_supplier %}
         <a href="{{url_for('suppliers')}}">{{company['CompanyName']}}</a>
         {% endfor %}
